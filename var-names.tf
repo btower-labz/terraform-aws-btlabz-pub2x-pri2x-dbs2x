@@ -37,6 +37,5 @@ variable "database_a_name" {
 variable "database_b_name" {
   description = "Database subnet B name. Will be used as the 'Name' tag value."
   type        = "string"
-  default     = database-b"
+  default     = "database-b"
 }
-
