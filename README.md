@@ -22,7 +22,7 @@ See here: [FILES](FILES.md)
 ### Usage
 
 ```
-module "vpc-staging" {
+module "vpc_staging" {
   source = "git::ssh://git@gitlab.com/btower-labz-terraform/vpc-pub2x-pri2x-dbs2x-no-nat.git?ref=master"
 
   vpc_name = "vpc-staging"
