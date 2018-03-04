@@ -1,8 +1,8 @@
 # BT-Labz AWS VPC parts.
 
-## VPC contruction. 2x AZ +HA NAT.
+## VPC contruction. 2x AZ. No NAT.
 
-Terraform registry: https://registry.terraform.io/modules/btower-labz/btlabz-vpc-ha-2x/aws
+Terraform registry: ...
 
 ### Project structure
 
@@ -17,7 +17,7 @@ See here: [FILES](FILES.md)
 * High Availability (double AZ)
 * Public subnets.
 * Private subnets.
-* Double NATs with EIPs
+* Database subnets.
 
 ### Usage
 
