@@ -1,6 +1,6 @@
 module "main_vpc" {
   source   = "btower-labz/btlabz-vpc-base/aws"
-  version  = "0.0.3"
+  version  = "0.0.4"
   vpc_name = "${var.vpc_name}"
   igw_name = "${var.igw_name}"
   cidr     = "${var.vpc_cidr}"
@@ -9,7 +9,7 @@ module "main_vpc" {
 
 module "public_a" {
   source  = "btower-labz/btlabz-pub-sn/aws"
-  version = "0.0.3"
+  version = "0.0.4"
   vpc_id  = "${module.main_vpc.vpc_id}"
   name    = "${var.public_a_name}"
   az      = "${local.az_a}"
@@ -20,7 +20,7 @@ module "public_a" {
 
 module "public_b" {
   source  = "btower-labz/btlabz-pub-sn/aws"
-  version = "0.0.3"
+  version = "0.0.4"
   vpc_id  = "${module.main_vpc.vpc_id}"
   name    = "${var.public_b_name}"
   az      = "${local.az_b}"
@@ -31,7 +31,7 @@ module "public_b" {
 
 module "private_a" {
   source  = "btower-labz/btlabz-pri-sn/aws"
-  version = "0.0.3"
+  version = "0.0.4"
   vpc_id  = "${module.main_vpc.vpc_id}"
   name    = "${var.private_a_name}"
   az      = "${local.az_a}"
@@ -41,7 +41,7 @@ module "private_a" {
 
 module "private_b" {
   source  = "btower-labz/btlabz-pri-sn/aws"
-  version = "0.0.3"
+  version = "0.0.4"
   vpc_id  = "${module.main_vpc.vpc_id}"
   name    = "${var.private_b_name}"
   az      = "${local.az_b}"
@@ -51,7 +51,7 @@ module "private_b" {
 
 module "database_a" {
   source  = "btower-labz/btlabz-pri-sn/aws"
-  version = "0.0.3"
+  version = "0.0.4"
   vpc_id  = "${module.main_vpc.vpc_id}"
   name    = "${var.database_a_name}"
   az      = "${local.az_a}"
@@ -61,7 +61,7 @@ module "database_a" {
 
 module "database_b" {
   source  = "btower-labz/btlabz-pri-sn/aws"
-  version = "0.0.3"
+  version = "0.0.4"
   vpc_id  = "${module.main_vpc.vpc_id}"
   name    = "${var.database_b_name}"
   az      = "${local.az_b}"
