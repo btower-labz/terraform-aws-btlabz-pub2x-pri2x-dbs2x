@@ -1,4 +1,4 @@
-data "aws_region" "current" {}
+data "aws_region" "current" { current = true }
 
 data "aws_availability_zone" "zone_a" {
   name = "${var.az_a=="" ? format("%sa", data.aws_region.current.name) : var.az_a}"
