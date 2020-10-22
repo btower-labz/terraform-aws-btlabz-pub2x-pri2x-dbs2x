@@ -11,6 +11,7 @@
 ├── var-cidr.tf
 ├── var-gw-names.tf
 ├── var-names.tf
+├── var-rt-names.tf
 ├── var-tags.tf
 └── version.tf
 ```
@@ -27,6 +28,7 @@
 | ./var-cidr.tf | | 
 | ./var-gw-names.tf | | 
 | ./var-names.tf | | 
+| ./var-rt-names.tf | | 
 | ./var-tags.tf | | 
 | ./version.tf | | 
 | ... | ... |
