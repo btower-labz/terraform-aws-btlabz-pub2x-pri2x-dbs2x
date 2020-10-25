@@ -1,6 +1,6 @@
 # BT-Labz AWS VPC parts.
 
-## VPC contruction. 2x AZ. No NAT.
+## VPC contruction. 2x AZ. HA NAT.
 
 Terraform registry: ...
 
@@ -17,13 +17,13 @@ See here: [INPUTS\OUTPUTS](INOUT.md)
 * High Availability (double AZ)
 * Public subnets.
 * Private subnets.
-* Database subnets.
+* Database subnets and the subnet group
 
 ### Usage
 
 ```
 module "vpc_staging" {
-  source = "git::ssh://git@gitlab.com/btower-labz-terraform/vpc-pub2x-pri2x-dbs2x-no-nat.git?ref=master"
+  source = "git::ssh://git@gitlab.com/btower-labz-terraform/terraform-aws-btlabz-pub2x-pri2x-dbs2x.git?ref=master"
 
   vpc_name = "vpc-staging"
 

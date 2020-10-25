@@ -22,6 +22,9 @@
 | database\_a\_name | Database subnet A name. Will be used as the 'Name' tag value. | `string` | `"database-a"` | no |
 | database\_b\_cidr | Database network B CIDR range. | `string` | `"172.18.22.0/24"` | no |
 | database\_b\_name | Database subnet B name. Will be used as the 'Name' tag value. | `string` | `"database-b"` | no |
+| database\_dsg\_description | The description of the DB subnet group. | `string` | `"Managed by Terraform"` | no |
+| database\_dsg\_name | The name of the DB subnet group. | `string` | `"main-dsg"` | no |
+| database\_sn\_name | The name of the DB subnet group. If omitted, Terraform will assign a random, unique name. | `string` | `""` | no |
 | igw\_name | IGW name. Will be used as the 'Name' tag value. | `string` | `"main-igw"` | no |
 | nat\_a\_name | NAT-A name. Will be used as the 'Name' tag value. | `string` | `"nat-a"` | no |
 | nat\_b\_name | NAT-B name. Will be used as the 'Name' tag value. | `string` | `"nat-b"` | no |
@@ -48,6 +51,9 @@
 |------|-------------|
 | database\_a | Database subnet A identifier. |
 | database\_b | Database subnet B identifier. |
+| database\_dsg\_arn | Database subnet group arn. |
+| database\_dsg\_id | Database subnet group identifier. |
+| database\_dsg\_name | Database subnet group name. |
 | private\_a | Private subnet A identifier. |
 | private\_b | Private subnet B identifier. |
 | public\_a | Public subnet A identifier. |

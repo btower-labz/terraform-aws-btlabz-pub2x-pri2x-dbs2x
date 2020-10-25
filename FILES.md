@@ -4,9 +4,11 @@
 ```
 .
 ├── az.tf
+├── db-subnets.tf
 ├── LICENSE
 ├── main.tf
 ├── outputs.tf
+├── routes.tf
 ├── var-az.tf
 ├── var-cidr.tf
 ├── var-gw-names.tf
@@ -21,9 +23,11 @@
 | File | Description |
 | --- | --- |
 | ./az.tf | | 
+| ./db-subnets.tf | | 
 | ./LICENSE | | 
 | ./main.tf | | 
 | ./outputs.tf | | 
+| ./routes.tf | | 
 | ./var-az.tf | | 
 | ./var-cidr.tf | | 
 | ./var-gw-names.tf | | 
