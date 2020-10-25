@@ -40,3 +40,8 @@ variable "database_b_name" {
   default     = "database-b"
 }
 
+variable "database_sn_name" {
+  description = "The name of the DB subnet group. If omitted, Terraform will assign a random, unique name."
+  type        = string
+  default     = ""
+}
