@@ -5,6 +5,10 @@ module "main_vpc" {
   igw_name = var.igw_name
   cidr     = var.vpc_cidr
   rt_name  = var.rt_public_name
+  tags = merge(
+    var.tags,
+    var.vpc_tags
+  )
 }
 
 module "public_a" {
@@ -15,7 +19,11 @@ module "public_a" {
   az      = local.az_a
   cidr    = var.public_a_cidr
   rt_id   = module.main_vpc.rt_id
-  tags    = var.tags
+  tags = merge(
+    var.tags,
+    var.subnet_tags,
+    var.public_subnet_tags
+  )
 }
 
 module "public_b" {
@@ -26,7 +34,11 @@ module "public_b" {
   az      = local.az_b
   cidr    = var.public_b_cidr
   rt_id   = module.main_vpc.rt_id
-  tags    = var.tags
+  tags = merge(
+    var.tags,
+    var.subnet_tags,
+    var.public_subnet_tags
+  )
 }
 
 module "private_a" {
@@ -36,7 +48,11 @@ module "private_a" {
   name    = var.private_a_name
   az      = local.az_a
   cidr    = var.private_a_cidr
-  tags    = var.tags
+  tags = merge(
+    var.tags,
+    var.subnet_tags,
+    var.private_subnet_tags
+  )
 }
 
 module "private_b" {
@@ -46,7 +62,11 @@ module "private_b" {
   name    = var.private_b_name
   az      = local.az_b
   cidr    = var.private_b_cidr
-  tags    = var.tags
+  tags = merge(
+    var.tags,
+    var.subnet_tags,
+    var.private_subnet_tags
+  )
 }
 
 module "database_a" {
@@ -56,7 +76,11 @@ module "database_a" {
   name    = var.database_a_name
   az      = local.az_a
   cidr    = var.database_a_cidr
-  tags    = var.tags
+  tags = merge(
+    var.tags,
+    var.subnet_tags,
+    var.database_subnet_tags
+  )
 }
 
 module "database_b" {
@@ -66,7 +90,11 @@ module "database_b" {
   name    = var.database_b_name
   az      = local.az_b
   cidr    = var.database_b_cidr
-  tags    = var.tags
+  tags = merge(
+    var.tags,
+    var.subnet_tags,
+    var.database_subnet_tags
+  )
 }
 
 module "nat_a" {
@@ -74,7 +102,10 @@ module "nat_a" {
   version   = "0.1.0"
   subnet_id = module.public_a.subnet_id
   name      = var.nat_a_name
-  tags      = var.tags
+  tags = merge(
+    var.tags,
+    var.nat_tags
+  )
 }
 
 module "nat_b" {
@@ -82,6 +113,8 @@ module "nat_b" {
   version   = "0.1.0"
   subnet_id = module.public_b.subnet_id
   name      = var.nat_b_name
-  tags      = var.tags
+  tags = merge(
+    var.tags,
+    var.nat_tags
+  )
 }
-
