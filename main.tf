@@ -104,7 +104,7 @@ module "nat_a" {
   name      = var.nat_a_name
   tags = merge(
     var.tags,
-    var.nat_tags,
+    var.nat_tags
   )
 }
 
@@ -115,6 +115,6 @@ module "nat_b" {
   name      = var.nat_b_name
   tags = merge(
     var.tags,
-    var.nat_tags,
+    var.nat_tags
   )
 }
