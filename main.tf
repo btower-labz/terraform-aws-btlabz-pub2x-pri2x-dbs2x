@@ -12,13 +12,14 @@ module "main_vpc" {
 }
 
 module "public_a" {
-  source  = "btower-labz/btlabz-pub-sn/aws"
-  version = "0.1.0"
-  vpc_id  = module.main_vpc.vpc_id
-  name    = var.public_a_name
-  az      = local.az_a
-  cidr    = var.public_a_cidr
-  rt_id   = module.main_vpc.rt_id
+  source = "../../modules/terraform-aws-btlabz-pub-sn"
+  #source  = "btower-labz/btlabz-pub-sn/aws"
+  #version = "0.1.0"
+  vpc_id = module.main_vpc.vpc_id
+  name   = var.public_a_name
+  az     = local.az_a
+  cidr   = var.public_a_cidr
+  rt_id  = module.main_vpc.rt_id
   tags = merge(
     var.tags,
     var.subnet_tags,
@@ -27,13 +28,14 @@ module "public_a" {
 }
 
 module "public_b" {
-  source  = "btower-labz/btlabz-pub-sn/aws"
-  version = "0.1.0"
-  vpc_id  = module.main_vpc.vpc_id
-  name    = var.public_b_name
-  az      = local.az_b
-  cidr    = var.public_b_cidr
-  rt_id   = module.main_vpc.rt_id
+  source = "../../modules/terraform-aws-btlabz-pub-sn"
+  #source  = "btower-labz/btlabz-pub-sn/aws"
+  #version = "0.1.0"
+  vpc_id = module.main_vpc.vpc_id
+  name   = var.public_b_name
+  az     = local.az_b
+  cidr   = var.public_b_cidr
+  rt_id  = module.main_vpc.rt_id
   tags = merge(
     var.tags,
     var.subnet_tags,
@@ -42,12 +44,13 @@ module "public_b" {
 }
 
 module "private_a" {
-  source  = "btower-labz/btlabz-pri-sn/aws"
-  version = "0.1.0"
-  vpc_id  = module.main_vpc.vpc_id
-  name    = var.private_a_name
-  az      = local.az_a
-  cidr    = var.private_a_cidr
+  source = "../../modules/terraform-aws-btlabz-pri-sn"
+  #source  = "btower-labz/btlabz-pri-sn/aws"
+  #version = "0.1.0"
+  vpc_id = module.main_vpc.vpc_id
+  name   = var.private_a_name
+  az     = local.az_a
+  cidr   = var.private_a_cidr
   tags = merge(
     var.tags,
     var.subnet_tags,
@@ -56,12 +59,13 @@ module "private_a" {
 }
 
 module "private_b" {
-  source  = "btower-labz/btlabz-pri-sn/aws"
-  version = "0.1.0"
-  vpc_id  = module.main_vpc.vpc_id
-  name    = var.private_b_name
-  az      = local.az_b
-  cidr    = var.private_b_cidr
+  source = "../../modules/terraform-aws-btlabz-pri-sn"
+  #source  = "btower-labz/btlabz-pri-sn/aws"
+  #version = "0.1.0"
+  vpc_id = module.main_vpc.vpc_id
+  name   = var.private_b_name
+  az     = local.az_b
+  cidr   = var.private_b_cidr
   tags = merge(
     var.tags,
     var.subnet_tags,
